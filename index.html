@@ -1,0 +1,619 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title> Web Application Test Plan</title>
+		<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+				<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">  </script>
+					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">  </script>
+					<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@0;1&display=swap" rel="stylesheet">
+						<link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+							<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
+   </head>
+							<style>
+      body {
+      font - family: 'Ubuntu',
+      sans - serif;
+      }
+   </style>
+							<body>
+								<div class="container">
+									<h1> Web Application Test Plan</h1>
+									<p> Type something in the input field to search the table:  </p>
+									<input class="form-control" id="myInput" type="text" placeholder="Web OWASP Category, Checks, Tools used...">
+										<br>
+											<div class="table-responsive">
+												<table class="table table-bordered table-hover table-sm">
+													<thead class="thead-dark">
+														<tr>
+															<th> Web OWASP Category </th>
+															<th> Checks </th>
+															<th> Tools used </th>
+														</tr>
+													</thead>
+													<tbody id="myTable">
+														<tr>
+															<td>	Information Gathering	</td>
+															<td>&#10004;	Manually explore the site	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Spider/crawl for missed or hidden content	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Check for files that expose content, such as robots.txt, sitemap.xml, .DS_Store	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Check the caches of major search engines for publicly accessible sites	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Check for differences in content based on User Agent (eg, Mobile sites, access as a Search engine Crawler)	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Perform Web Application Fingerprinting	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify technologies used	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify user roles	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify application entry points	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify client-side code	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify multiple versions/channels (e.g., web, mobile web, mobile app, web services)	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify co-hosted and related applications	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify all hostnames and ports	</td>
+															<td>	YES	</td>
+														</tr>
+														<tr>
+															<td style="color:white;">	Information Gathering	</td>
+															<td>&#10004;	Identify third-party hosted content	</td>
+															<td>	YES	</td>
+														</tr>
+														
+														<tr>			</td>
+														<td>	Configuration Management	</td>
+														<td>&#10004;	Check for commonly used application and administrative URLs	</td>
+														<td>	YES	</td>
+													</tr>
+													<tr>			<td style="color:white;">	Configuration Management	</td>
+														<td>&#10004;	Check for old, backup and unreferenced files	</td>
+														<td>	YES	</td>
+													</tr>
+													<tr>			<td style="color:white;">	Configuration Management	</td>
+														<td>&#10004;	Check HTTP methods supported and Cross Site Tracing (XST)	</td>
+														<td>	YES	</td>
+													</tr>
+													<tr>			<td style="color:white;">	Configuration Management	</td>
+														<td>&#10004;	Test file extensions handling	</td>
+														<td>	YES	</td>
+													</tr>
+													<tr>			<td style="color:white;">	Configuration Management	</td>
+														<td>&#10004;	Test for security HTTP headers (e.g., CSP, X-Frame-Options, HSTS)	</td>
+														<td>	YES	</td>
+													</tr>
+													<tr>			<td style="color:white;">	Configuration Management	</td>
+														<td>&#10004;	Test for policies (e.g., Flash, Silverlight, robots)	</td>
+														<td>	YES	</td>
+													</tr>
+													<tr>			<td style="color:white;">	Configuration Management	</td>
+														<td>&#10004;	Test for non-production data in live environment, and vice-versa	</td>
+														<td>	YES	</td>
+													</tr>
+													<tr>			<td style="color:white;">	Configuration Management	</td>
+														<td>&#10004;	Check for sensitive data in client-side code (e.g., API keys, credentials)	</td>
+														<td>	YES	</td>
+													</tr>
+													
+													<tr>			</td>
+													<td>	Secure Transmission	</td>
+													<td>&#10004;	Check SSL Version, Algorithms, Key length	</td>
+													<td>	YES	</td>
+												</tr>
+												<tr>			<td style="color:white;">	Secure Transmission	</td>
+													<td>&#10004;	Check for Digital Certificate Validity (Duration, Signature and CN)	</td>
+													<td>	YES	</td>
+												</tr>
+												<tr>			<td style="color:white;">	Secure Transmission	</td>
+													<td>&#10004;	Check credentials only delivered over HTTPS	</td>
+													<td>	YES	</td>
+												</tr>
+												<tr>			<td style="color:white;">	Secure Transmission	</td>
+													<td>&#10004;	Check that the login form is delivered over HTTPS	</td>
+													<td>	YES	</td>
+												</tr>
+												<tr>			<td style="color:white;">	Secure Transmission	</td>
+													<td>&#10004;	Check session tokens only delivered over HTTPS	</td>
+													<td>	YES	</td>
+												</tr>
+												<tr>			<td style="color:white;">	Secure Transmission	</td>
+													<td>&#10004;	Check if HTTP Strict Transport Security (HSTS) in use	</td>
+													<td>	YES	</td>
+												</tr>
+												
+												<tr>			</td>
+												<td>	Authentication	</td>
+												<td>&#10004;	Test for user enumeration	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for authentication bypass	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for brute force protection	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test password quality rules	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test remember me functionality	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for autocomplete on password forms/input	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test password reset and/or recovery	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test password change process	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test CAPTCHA	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test multi factor authentication	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for logout functionality presence	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for cache management on HTTP (e.g., Pragma, Expires, Max-age)	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for default logins	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for user-accessible authentication history	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for out-of channel notification of account lockouts and successful password changes	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			<td style="color:white;">	Authentication	</td>
+												<td>&#10004;	Test for consistent authentication across applications with shared authentication schema / SSO	</td>
+												<td>	YES	</td>
+											</tr>
+											<tr>			</td>
+											<td>	Session Management	</td>
+											<td>&#10004;	Establish how session management is handled in the application (e.g., tokens in cookies, token in URL)	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Check session tokens for cookie flags (HTTPOnly and secure)	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Check session cookie scope (path and domain)	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Check session cookie duration (expires and max age)	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Check session termination after a maximum lifetime	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Check session termination after relative timeout	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Check session termination after logout	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Test to see if users can have multiple simultaneous sessions	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Test session cookies for randomness	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Confirm that new session tokens are issued on login, role change and logout	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Test for consistent session management across applications with shared session management	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Test for session puzzling	</td>
+											<td>	YES	</td>
+										</tr>
+										<tr>			<td style="color:white;">	Session Management	</td>
+											<td>&#10004;	Test for CSRF and clickjacking	</td>
+											<td>	YES	</td>
+										</tr>
+										
+										<tr>			</td>
+										<td>	Authorization	</td>
+										<td>&#10004;	Test for path traversal	</td>
+										<td>	YES	</td>
+									</tr>
+									<tr>			<td style="color:white;">	Authorization	</td>
+										<td>&#10004;	Test for bypassing authorization schema	</td>
+										<td>	YES	</td>
+									</tr>
+									<tr>			<td style="color:white;">	Authorization	</td>
+										<td>&#10004;	Test for vertical Access control problems (a.k.a. Privilege Escalation)	</td>
+										<td>	YES	</td>
+									</tr>
+									<tr>			<td style="color:white;">	Authorization	</td>
+										<td>&#10004;	Test for horizontal Access control problems (between two users at the same privilege level)	</td>
+										<td>	YES	</td>
+									</tr>
+									<tr>			<td style="color:white;">	Authorization	</td>
+										<td>&#10004;	Test for missing authorization	</td>
+										<td>	YES	</td>
+									</tr>
+									
+									<tr>			</td>
+									<td>	Data Validation	</td>
+									<td>&#10004;	Test for Reflected Cross Site Scripting	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Stored Cross Site Scripting	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for DOM based Cross Site Scripting	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Cross Site Flashing	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for HTML Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for SQL Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for LDAP Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for ORM Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for XML Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for XXE Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for SSI Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for XPath Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for XQuery Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for IMAP/SMTP Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Code Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Expression Language Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Command Injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Overflow (Stack, Heap and Integer)	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Format String	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for incubated vulnerabilities	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for HTTP Splitting/Smuggling	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for HTTP Verb Tampering	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Open Redirection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Local File Inclusion	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Remote File Inclusion	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Compare client-side and server-side validation rules	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for NoSQL injection	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for HTTP parameter pollution	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for auto-binding	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for Mass Assignment	</td>
+									<td>	YES	</td>
+								</tr>
+								<tr>			<td style="color:white;">	Data Validation	</td>
+									<td>&#10004;	Test for NULL/Invalid Session Cookie	</td>
+									<td>	YES	</td>
+								</tr>
+								
+								<tr>			</td>
+								<td>	Denial of Service	</td>
+								<td>&#10004;	Test for anti-automation	</td>
+								<td>	YES	</td>
+							</tr>
+							<tr>			<td style="color:white;">	Denial of Service	</td>
+								<td>&#10004;	Test for account lockout	</td>
+								<td>	YES	</td>
+							</tr>
+							<tr>			<td style="color:white;">	Denial of Service	</td>
+								<td>&#10004;	Test for HTTP protocol DoS	</td>
+								<td>	YES	</td>
+							</tr>
+							<tr>			<td style="color:white;">	Denial of Service	</td>
+								<td>&#10004;	Test for SQL wildcard DoS	</td>
+								<td>	YES	</td>
+							</tr>
+							
+							<tr>			</td>
+							<td>	Business Logic	</td>
+							<td>&#10004;	Test for feature misuse	</td>
+							<td>	YES	</td>
+						</tr>
+						<tr>			<td style="color:white;">	Business Logic	</td>
+							<td>&#10004;	Test for lack of non-repudiation	</td>
+							<td>	YES	</td>
+						</tr>
+						<tr>			<td style="color:white;">	Business Logic	</td>
+							<td>&#10004;	Test for trust relationships	</td>
+							<td>	YES	</td>
+						</tr>
+						<tr>			<td style="color:white;">	Business Logic	</td>
+							<td>&#10004;	Test for integrity of data	</td>
+							<td>	YES	</td>
+						</tr>
+						<tr>			<td style="color:white;">	Business Logic	</td>
+							<td>&#10004;	Test segregation of duties	</td>
+							<td>	YES	</td>
+						</tr>
+						
+						<tr>			</td>
+						<td>	Cryptography	</td>
+						<td>&#10004;	Check if data which should be encrypted is not	</td>
+						<td>	YES	</td>
+					</tr>
+					<tr>			<td style="color:white;">	Cryptography	</td>
+						<td>&#10004;	Check for wrong algorithms usage depending on context	</td>
+						<td>	YES	</td>
+					</tr>
+					<tr>			<td style="color:white;">	Cryptography	</td>
+						<td>&#10004;	Check for weak algorithms usage	</td>
+						<td>	YES	</td>
+					</tr>
+					<tr>			<td style="color:white;">	Cryptography	</td>
+						<td>&#10004;	Check for proper use of salting	</td>
+						<td>	YES	</td>
+					</tr>
+					<tr>			<td style="color:white;">	Cryptography	</td>
+						<td>&#10004;	Check for randomness functions	</td>
+						<td>	YES	</td>
+					</tr>
+					
+					<tr>			</td>
+					<td>	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that acceptable file types are whitelisted	</td>
+					<td>	YES	</td>
+				</tr>
+				<tr>			<td style="color:white;">	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that file size limits, upload frequency and total file counts are defined and are enforced	</td>
+					<td>	YES	</td>
+				</tr>
+				<tr>			<td style="color:white;">	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that file contents match the defined file type	</td>
+					<td>	YES	</td>
+				</tr>
+				<tr>			<td style="color:white;">	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that all file uploads have Anti-Virus scanning in-place.	</td>
+					<td>	YES	</td>
+				</tr>
+				<tr>			<td style="color:white;">	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that unsafe filenames are sanitised	</td>
+					<td>	YES	</td>
+				</tr>
+				<tr>			<td style="color:white;">	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that uploaded files are not directly accessible within the web root	</td>
+					<td>	YES	</td>
+				</tr>
+				<tr>			<td style="color:white;">	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that uploaded files are not served on the same hostname/port	</td>
+					<td>	YES	</td>
+				</tr>
+				<tr>			<td style="color:white;">	Risky Functionality - File Uploads	</td>
+					<td>&#10004;	Test that files and other media are integrated with the authentication and authorisation schemas	</td>
+					<td>	YES	</td>
+				</tr>
+			
+				<tr>			</td>
+				<td>	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for known vulnerabilities and configuration issues on Web Server and Web Application	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for default or guessable password	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for non-production data in live environment, and vice-versa	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for Injection vulnerabilities	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for Buffer Overflows	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for Insecure Cryptographic Storage	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for Insufficient Transport Layer Protection	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for Improper Error Handling	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for all vulnerabilities with a CVSS v2 score > 4.0	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for Authentication and Authorization issues	</td>
+				<td>	YES	</td>
+			</tr>
+			<tr>			<td style="color:white;">	Risky Functionality - Card Payment	</td>
+				<td>&#10004;	Test for CSRF	</td>
+				<td>	YES	</td>
+			</tr>			
+			<tr>
+			<td>HTML 5	</td>
+			<td>&#10004;	Test Web Messaging	</td>
+			<td>	YES	</td>
+			</tr>
+		<tr>			<td style="color:white;">	HTML 6	</td>
+			<td>&#10004;	Test for Web Storage SQL injection	</td>
+			<td>	YES	</td>
+		</tr>
+		<tr>			<td style="color:white;">	HTML 7	</td>
+			<td>&#10004;	Check CORS implementation	</td>
+			<td>	YES	</td>
+		</tr>
+		<tr>			<td style="color:white;">	HTML 8	</td>
+			<td>&#10004;	Check Offline Web Application	</td>
+			<td>	YES	</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<p> Note that we start the search in tbody, to prevent filtering the table headers. </p>
+</div>
+<div class="container">
+	<center>
+		<span class="align-middle"> Made with  <span style="color:#e25555;">  &#9829;
+            </span> in India | © 2021 RaKKeN. </span>
+	</center>
+</div>
+<script>
+         $(document).ready(function () {
+         $("#myInput").on("keyup", function () {
+         var value = $(this).val().toLowerCase();
+         $("#myTable tr").filter(function () {
+         $(this).toggle($(this).text().toLowerCase().indexOf(value)> -1)
+         });
+         });
+         });
+      </script>
+</body>
+</html>
+
